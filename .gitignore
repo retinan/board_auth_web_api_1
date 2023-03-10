@@ -1,1 +1,9 @@
 /venv/
+.idea
+
+migrations/
+borard/migrations/
+api/migrations/
+
+
+/board_auth_web_api_1/db.sqlite3
