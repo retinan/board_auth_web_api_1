@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
 
 # Create your views here.
@@ -20,3 +20,24 @@ def board_detail(request, pk):
         'board': board
     }
     return render(request, 'board/detail.html', context)
+
+
+def board_create(request):
+
+    print(request.method)
+
+    if request.method == 'GET':
+        return render(request, 'board/create.html')
+
+    if request.method == 'POST':
+
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+
+        board = Board.objects.create(title=title, content=content, user_id=1)
+
+        return redirect(f'/board/{board.id}')
+
+
+
+
