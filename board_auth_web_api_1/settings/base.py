@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'board',
     'board_class',
     'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

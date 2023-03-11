@@ -14,9 +14,24 @@ class BoardList(ListView):
     template_name = 'board_class/list.html'
     context_object_name = 'boards'
 
-    def get_queryset(self):
-        boards = Board.objects.all()
-        return boards
+    '''
+    추가 context 데이터가 필요 없는 경우
+    get_queryset 방식으로 넘김
+    '''
+    # def get_queryset(self):
+    #     boards = Board.objects.all()
+    #     return boards
+
+    '''
+    get_context_data 방식으로 넘길때 모델 지정 필요
+    context 에 추가 데이터 넣을 수 있음.
+    '''
+    model = Board
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['now'] = timezone.now()
+        return context
 
 
 class BoardDetail(DetailView):
