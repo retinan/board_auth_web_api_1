@@ -56,5 +56,7 @@ def board_update(request, pk):
         return redirect(f'/board/{pk}')
 
 
+def board_delete(request, pk):
 
-
+    Board.objects.filter(id=pk).delete()
+    return redirect(f'/board/')

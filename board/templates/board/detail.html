@@ -8,6 +8,9 @@
     <pre>{{ board.content }}</pre>
     </div>
 
-    <a href="/board/update/{{ board.id }}">수정하기</a>
+
+    <a href="{% url 'board:list' %}">목록</a>
+    <a href="{% url 'board:update' board.id %}">수정하기</a>
+    <a href="{% url 'board:delete' board.id %}">삭제하기</a>
 
 {% endblock %}
