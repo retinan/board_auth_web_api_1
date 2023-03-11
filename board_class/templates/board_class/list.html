@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <ul>
+    {% for board in boards %}
+    <li><a href="{% url 'board_class:detail' board.id %}">{{ board.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'board_class:create' %}">글쓰기</a>
+{% endblock %}

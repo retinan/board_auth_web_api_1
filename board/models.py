@@ -8,7 +8,7 @@ class Board(models.Model):
     modified_date = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=200)
     content = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,blank=True)
 
 
 class Reply(models.Model):

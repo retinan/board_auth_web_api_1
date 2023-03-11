@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+    <h1>{{ board.title }}</h1>
+    <hr/>
+    <div>
+    <pre>{{ board.content }}</pre>
+    </div>
+
+
+    <a href="{% url 'board_class:list' %}">목록</a>
+    <a href="{% url 'board_class:update' board.id %}">수정하기</a>
+    <form action="{% url 'board_class:delete' board.id %}" method="post">
+        {% csrf_token %}
+        <button>삭제하기</button>
+    </form>
+
+{% endblock %}

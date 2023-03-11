@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'board',
-    'api'
+    'board_class',
+    'api',
 ]
 
 MIDDLEWARE = [
